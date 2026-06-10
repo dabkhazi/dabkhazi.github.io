@@ -1,5 +1,167 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dabkhazi | Public Projects</title>
+    <style>
+        :root {
+            --bg-color: #f6f8fa;
+            --text-color: #24292f;
+            --text-muted: #57606a;
+            --accent-color: #0969da;
+            --card-bg: #ffffff;
+            --card-border: #d0d7de;
+            --card-hover: #f3f4f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .project-card:hover {
+            background-color: var(--card-hover);
+            border-color: #8c959f;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 0 0 8px 0;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin: 0 0 16px 0;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .tech-tag {
+            background-color: #afb8c133;
+            padding: 2px 8px;
+            border-radius: 2em;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
 <body>
-<h1>dabkhazi.github.io</h1>
+
+    <div class="container">
+        <header>
+            <h1>dabkhazi</h1>
+            <p class="subtitle">My public repositories and projects</p>
+        </header>
+
+        <main class="project-list" id="projects-container">
+            <!-- Projects are rendered dynamically via JavaScript -->
+        </main>
+
+        <footer>
+            <p>© 2026 <a href="https://github.com/dabkhazi" target="_blank">github.com/dabkhazi</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // TO UPDATE THE PAGE: Just add new objects to this array
+        const PROJECTS = [
+            {
+                title: "mssql-autodb",
+                description: "A custom MS SQL Server Docker/Podman image that automatically creates a database on startup using an environment variable, mimicking the behavior of official PostgreSQL or MySQL images.",
+                link: "https://github.com/dabkhazi/mssql-autodb",
+                tech: "Shell / Dockerfile",
+                category: "DevOps / Database"
+            }
+            /* Future project template:
+            ,{
+                title: "project-name",
+                description: "Short description of what this repository does.",
+                link: "https://github.com",
+                tech: "Go / TypeScript / Python",
+                category: "Library / Tool"
+            }
+            */
+        ];
+
+        function renderProjects() {
+            const container = document.getElementById('projects-container');
+            container.innerHTML = PROJECTS.map(p => `
+                <a href="${p.link}" target="_blank" class="project-card">
+                    <h2 class="project-title">${p.title}</h2>
+                    <p class="project-desc">${p.description}</p>
+                    <div class="project-meta">
+                        <span class="tech-tag">${p.tech}</span>
+                        <span>•</span>
+                        <span>${p.category}</span>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        renderProjects();
+    </script>
 </body>
 </html>
