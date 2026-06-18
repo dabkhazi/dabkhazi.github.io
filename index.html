@@ -45,7 +45,25 @@
         .subtitle {
             color: var(--text-muted);
             font-size: 1.1rem;
-            margin: 0;
+            margin: 0 0 16px 0;
+        }
+
+        .contacts {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contacts a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contacts a:hover {
+            text-decoration: underline;
         }
 
         .project-list {
@@ -114,6 +132,13 @@
         <header>
             <h1>dabkhazi</h1>
             <p class="subtitle">My public repositories and projects</p>
+            <div class="contacts">
+                <a href="mailto:dabkhazi@gmail.com">Email</a>
+                <span>•</span>
+                <a href="https://t.me/dabkhazi" target="_blank">Telegram</a>
+                <span>•</span>
+                <a href="https://www.linkedin.com/in/dmitry-abkhazi-a15b5940/" target="_blank">LinkedIn</a>
+            </div>
         </header>
 
         <main class="project-list" id="projects-container">
@@ -126,8 +151,14 @@
     </div>
 
     <script>
-        // TO UPDATE THE PAGE: Just add new objects to this array
         const PROJECTS = [
+            {
+                title: "stronghold-secret-reloader",
+                description: "A Java/Quarkus Kubernetes operator that tracks secret changes in Stronghold (Vault KV v2) and automatically initiates workload rollouts/restarts when secrets are updated.",
+                link: "https://github.com/dabkhazi/stronghold-secret-reloader",
+                tech: "Java / Quarkus",
+                category: "DevOps / Kubernetes"
+            },
             {
                 title: "keycloak-http-header-condition-plugin",
                 description: "A conditional Keycloak authenticator that evaluates incoming HTTP headers against a Java regex.",
