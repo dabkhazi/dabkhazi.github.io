@@ -131,7 +131,7 @@
     <div class="container">
         <header>
             <h1>dabkhazi</h1>
-            <p class="subtitle">My public repositories and projects</p>
+            <p class="subtitle">Java / Quarkus - security, integration, Kuberneres and developer tooling</p>
             <div class="contacts">
                 <a href="mailto:dabkhazi@gmail.com">Email</a>
                 <span>•</span>
@@ -154,52 +154,52 @@
         const PROJECTS = [
             {
                 title: "stronghold-secret-reloader",
-                description: "A Java/Quarkus Kubernetes operator that tracks secret changes in Stronghold (Vault KV v2) and automatically initiates workload rollouts/restarts when secrets are updated.",
+                description: "A Java/Quarkus Kubernetes operator that tracks Stronghold (Vault KV v2) secret changes and triggers workload rollouts when required.",
                 link: "https://github.com/dabkhazi/stronghold-secret-reloader",
                 tech: "Java / Quarkus",
                 category: "DevOps / Kubernetes"
             },
             {
                 title: "keycloak-http-header-condition-plugin",
-                description: "A conditional Keycloak authenticator that evaluates incoming HTTP headers against a Java regex.",
+                description: "A Keycloak authentication-flow condition providder that evaluates incoming HTTP headers using Java regular expressions.",
                 link: "https://github.com/dabkhazi/keycloak-http-header-condition-plugin",
-                tech: "Java",
+                tech: "Java / Keycloack SPI",
                 category: "Security / Keycloak"
             },
-            {
-                title: "keycloak-source-cidr-condition-plugin",
-                description: "Keycloak conditional authenticator that checks source IP against CIDR ranges.",
-                link: "https://github.com/dabkhazi/keycloak-source-cidr-condition-plugin",
-                tech: "Java",
-                category: "Security / Keycloak"
-            },     
-            {
-                title: "keycloak-client-samesite-filter",
-                description: "A Keycloak SPI plugin that dynamically rewrites SameSite cookie attributes to SameSite=None; Secure for specific clients running inside an iframe.",
-                link: "https://github.com/dabkhazi/keycloak-client-samesite-filter",
-                tech: "Java",
-                category: "Security / Keycloak"
-            },      
             {
                 title: "jcp-container-chain-patcher",
                 description: "A CLI utility to permanently inject an X.509 certificate chain (Leaf, CA, Root) directly into the CryptoPro JCP HDImageStore key container.",
                 link: "https://github.com/dabkhazi/jcp-container-chain-patcher",
-                tech: "Java",
+                tech: "Java / CryptoPro JCP",
                 category: "Security / Cryptography"
-            },                         
+            },
             {
                 title: "cxf-xjc-sln-plugin",
-                description: "SingularListNamePlugin is an xjc extension that prevents collection field names from being automatically pluralized when the xjc:simple binding is used.",
+                description: "An XJC plugin that preserves singular collection field names when generationg JAXB classes with xjc:simple binding.",
                 link: "https://github.com/dabkhazi/cxf-xjc-sln-plugin",
-                tech: "Java",
+                tech: "Java / JAXB / XJC",
                 category: "Development / Code Generation"
             },                         
             {
+                title: "keycloak-source-cidr-condition-plugin",
+                description: "A Keycloak authentication-flow condition provider that matches the request source address against configured CIDR ranges.",
+                link: "https://github.com/dabkhazi/keycloak-source-cidr-condition-plugin",
+                tech: "Java / Keycloack SPI",
+                category: "Security / Keycloak"
+            },
+            {
                 title: "mssql-autodb",
-                description: "A custom MS SQL Server Docker/Podman image that automatically creates a database on startup using an environment variable, mimicking the behavior of official PostgreSQL or MySQL images.",
+                description: "A Docker/Podman image for MS SQL Server that creates a configured database automatically during container startup.",
                 link: "https://github.com/dabkhazi/mssql-autodb",
                 tech: "Shell / Dockerfile",
                 category: "DevOps / Database"
+            },                 
+            {
+                title: "keycloak-client-samesite-filter",
+                description: "A Keycloak SPI extension that adjusts SameSite cookie attributes for selected clients embeded in iframes.",
+                link: "https://github.com/dabkhazi/keycloak-client-samesite-filter",
+                tech: "Java / Keycloack SPI",
+                category: "Security / Keycloak"
             }
             /* Future project template:
             ,{
